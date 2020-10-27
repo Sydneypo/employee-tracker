@@ -51,7 +51,6 @@ async function showRoleSummary() {
     console.log(' ');
     await db.query('SELECT r.id, title salary, name AS department FROM role r LEFT JOIN department d ON department_id = d.id', (err, res) => {
         if (err) throw err;
-        console.table(res);
         runApp();
     })
 };
